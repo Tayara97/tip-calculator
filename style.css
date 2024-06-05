@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* ## Colors
+
+### Primary */
+
+  --Strong-cyan: hsl(172, 67%, 45%);
+
+  /* ### Neutral */
+
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+  --weight: 700;
+}
+body {
+  font-family: "Space Mono";
+  font-weight: 700;
+  min-height: 100vh;
+  background-color: var(--Light-grayish-cyan);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .logo {
+  margin: 2rem auto;
+}
+.container .calculator {
+  background-color: var(--White);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 375px;
+}
+.container .calculator form .bill-input {
+  position: relative;
+}
+.container .calculator form .bill-input label {
+  display: block;
+  color: var(--Dark-grayish-cyan);
+  margin-bottom: 5px;
+}
+.container .calculator form .bill-input .dollar-icon {
+  position: absolute;
+  left: 10px;
+  top: calc(50% + 5px);
+}
+.container .calculator form .bill-input input {
+  background-color: var(--Very-light-grayish-cyan);
+  border: none;
+  text-align: right;
+  padding: 0.5rem;
+  color: var(--Very-dark-cyan);
+  font-size: 1.5rem;
+
+  font-weight: var(--weight);
+  outline: none;
+  width: 100%;
+  border-radius: 6px;
+  caret-color: var(--Strong-cyan);
+}
+
+.calculator form .bill-input input:focus {
+  border: 2px solid var(--Strong-cyan);
+}
+.calculator form .bill-input input::placeholder {
+  color: var(--Very-dark-cyan);
+  opacity: 50%;
+}
+.calculator form h3 {
+  display: block;
+  color: var(--Dark-grayish-cyan);
+  margin: 2rem 0 0.5rem;
+  font-size: 14px;
+}
+.calculator form .tips {
+  display: flex;
+  flex-wrap: wrap;
+}
+.calculator form .tips .tip-btn {
+  color: var(--White);
+  width: 100px;
+  border-radius: 5px;
+  height: 40px;
+  line-height: 40px;
+  margin: 5px 10px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  font-weight: var(--weight);
+}
+
+.calculator form .tips .tip-btn:not(:last-child) {
+  background-color: var(--Very-dark-cyan);
+  text-align: center;
+  cursor: pointer;
+}
+
+.calculator form .tips .tip-btn:not(:last-child):hover {
+  background-color: color-mix(
+    in srgb,
+    var(--Light-grayish-cyan) 50%,
+    var(--Strong-cyan) 50%
+  );
+  color: var(--Very-dark-cyan);
+}
+.calculator form .tips .tip-btn:not(:last-child).active {
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+form .tips #custom {
+  border: none;
+  background-color: var(--Very-light-grayish-cyan);
+  outline: none;
+  text-align: right;
+  caret-color: var(--Strong-cyan);
+  padding: 0.5rem;
+}
+
+form .tips #custom:focus {
+  border: 2px solid var(--Strong-cyan);
+}
+form .tips #custom::placeholder {
+  color: var(--Dark-grayish-cyan);
+  text-align: right;
+}
+form .tips #custom {
+  color: var(--Very-dark-cyan);
+}
+form .tips #custom::placeholder {
+  font-weight: 700;
+  font-size: 17px;
+}
+.calculator form .individuals {
+  position: relative;
+}
+.calculator form .individuals label {
+  display: block;
+  color: var(--Dark-grayish-cyan);
+  margin: 2rem 0 0.5rem;
+  font-size: 14px;
+}
+.calculator form .individuals .ppl-icon {
+  position: absolute;
+  left: 10px;
+  top: calc(50% + 5px);
+}
+.calculator form .individuals #total-ppl {
+  background-color: var(--Very-light-grayish-cyan);
+  border: none;
+  text-align: right;
+  padding: 0.5rem;
+  color: var(--Very-dark-cyan);
+  font-size: 1.5rem;
+  font-weight: var(--weight);
+  outline: none;
+  width: 100%;
+  border-radius: 6px;
+  caret-color: var(--Strong-cyan);
+}
+.calculator form .individuals #total-ppl::placeholder {
+  color: var(--Very-dark-cyan);
+  opacity: 50%;
+}
+.calculator form .individuals #total-ppl:focus {
+  border: 2px solid var(--Strong-cyan);
+}
+.individuals span {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  color: red;
+}
+.calculator .result {
+  border-radius: 12px;
+  background-color: var(--Very-dark-cyan);
+  padding: 2rem 1rem 1rem;
+  margin-top: 2rem;
+}
+.calculator .result .tip-amount,
+.calculator .result .total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.calculator .result .tip-amount .title,
+.calculator .result .total .title {
+  color: var(--White);
+}
+.calculator .result .tip-amount .person,
+.calculator .result .total .person {
+  display: block;
+  color: var(--Grayish-cyan);
+  font-size: 14px;
+}
+.calculator .result .tip-amount .person-tip,
+.calculator .result .total .person-total {
+  color: var(--Strong-cyan);
+  font-size: 2rem;
+}
+.calculator .result .reset {
+  background-color: var(--Strong-cyan);
+  display: block;
+  height: 3rem;
+  line-height: 3rem;
+  color: var(--Very-dark-cyan);
+  text-align: center;
+  font-size: 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.calculator .result .reset:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--Light-grayish-cyan) 50%,
+    var(--Strong-cyan) 50%
+  );
+}
+
+/* higer devices media */
+@media (min-width: 768px) {
+  .container .calculator {
+    flex-direction: row;
+    width: 750px;
+  }
+  .container .calculator form,
+  .container .calculator .result {
+    width: 50%;
+  }
+  .container .calculator .result {
+    margin-left: 60px;
+  }
+  form .tips #custom::placeholder {
+    text-align: center;
+  }
+  .calculator .result .tip-amount,
+  .calculator .result .total {
+    margin-bottom: 3rem;
+  }
+  .calculator .result .reset {
+    margin: 145px 0 10px;
+  }
+  .calculator .result {
+    margin-top: 0;
+  }
+}
+@media (min-width: 992px) {
+  .container .calculator {
+    width: 850px;
+  }
+}
