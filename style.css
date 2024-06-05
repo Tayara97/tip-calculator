@@ -23,7 +23,7 @@
 body {
   font-family: "Space Mono";
   font-weight: 700;
-  min-height: 100vh;
+  max-height: 100vh;
   background-color: var(--Light-grayish-cyan);
 }
 
